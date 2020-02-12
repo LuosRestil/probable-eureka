@@ -18,7 +18,7 @@ var transporter = nodemailer.createTransport({
   }
 });
 
-app.post("/", (req, res) => {
+app.post("/email", (req, res) => {
   var mailOptions = {
     from: req.body.email,
     to: process.env.EMAIL,
@@ -29,8 +29,10 @@ app.post("/", (req, res) => {
   transporter.sendMail(mailOptions, function(error, info) {
     if (error) {
       console.log(error);
+      res.send("Error");
     } else {
       console.log("Email sent: " + info.response);
+      res.send("Success");
     }
   });
 });
