@@ -6,6 +6,9 @@
   "scripts": {
     "watch": "nodemon server.js"
   },
+  "engines": {
+    "node": "12.13.0"
+  },
   "author": "Brian Smith",
   "license": "ISC",
   "dependencies": {
