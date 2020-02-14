@@ -5,10 +5,10 @@ const app = express();
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
-var corsOptions = {
-  origin: "https://brian-smith-portfolio.herokuapp.com/",
-  optionsSuccessStatus: 200
-};
+// var corsOptions = {
+//   origin: "https://brian-smith-portfolio.herokuapp.com/",
+//   optionsSuccessStatus: 200
+// };
 
 app.use(
   bodyParser.urlencoded({
@@ -24,7 +24,7 @@ var transporter = nodemailer.createTransport({
   }
 });
 
-app.post("/email", cors(corsOptions), (req, res) => {
+app.post("/email", cors(), (req, res) => {
   var mailOptions = {
     from: req.body.email,
     to: process.env.EMAIL,
