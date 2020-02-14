@@ -32,7 +32,7 @@ app.post("/email", (req, res) => {
       res.send(error);
     } else {
       console.log("Email sent: " + info.response);
-      res.send("Success");
+      res.send(info);
     }
   });
 });
