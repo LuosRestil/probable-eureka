@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 var corsOptions = {
-  origin: "https://www.briansmithdev.com/",
+  origin: "https://www.briansmithdev.com",
   optionsSuccessStatus: 200
 };
 
