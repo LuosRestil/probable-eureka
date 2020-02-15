@@ -26,10 +26,10 @@ var transporter = nodemailer.createTransport({
 
 app.post("/email", cors(corsOptions), (req, res) => {
   var mailOptions = {
-    from: req.body.email,
+    from: "briansmithdev.com",
     to: process.env.EMAIL,
-    subject: req.body.subject,
-    text: req.body.text
+    subject: "PORTFOLIO MESSAGE",
+    text: `from: ${req.body.email}\nsubject: ${req.body.subject}\nmessage: ${req.body.text}`
   };
 
   transporter.sendMail(mailOptions, function(error, info) {
