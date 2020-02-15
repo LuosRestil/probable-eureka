@@ -29,7 +29,7 @@ app.post("/email", cors(corsOptions), (req, res) => {
     from: "briansmithdev.com",
     to: process.env.EMAIL,
     subject: "PORTFOLIO MESSAGE",
-    text: `from: ${req.body.email}\nsubject: ${req.body.subject}\nmessage: ${req.body.text}`
+    text: `from: ${req.body.email}\nsubject: ${req.body.subject}\nmessage:\n\n${req.body.text}`
   };
 
   transporter.sendMail(mailOptions, function(error, info) {
